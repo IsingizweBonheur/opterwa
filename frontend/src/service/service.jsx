@@ -20,109 +20,115 @@ import SEO from "../seo/seo";
 
 export default function Service() {
   const services = [
-    {
-      id: 1,
-      title: "Computer Services",
-      icon: FaDesktop,
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-100",
-      description: "Professional computer repair, maintenance, and optimization services to keep your systems running smoothly.",
-      features: [
-        "Computer Repair & Maintenance",
-        "Hardware Upgrades",
-        "Software Installation",
-        "Data Recovery",
-        "System Optimization",
-        "Virus Removal"
-      ]
-    },
-    {
-      id: 2,
-      title: "Printer Services",
-      icon: FaPrint,
-      color: "text-green-600",
-      bgColor: "bg-green-50",
-      borderColor: "border-green-100",
-      description: "Expert printer repair, maintenance, and support for all major brands and models.",
-      features: [
-        "Printer Repair & Maintenance",
-        "Toner & Cartridge Replacement",
-        "Network Printer Setup",
-        "Printer Installation",
-        "Color Calibration",
-        "Consumables Supply"
-      ]
-    },
-    {
-      id: 3,
-      title: "Networking Services",
-      icon: FaNetworkWired,
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-100",
-      description: "Comprehensive networking solutions for homes and businesses, ensuring reliable connectivity.",
-      features: [
-        "Network Setup & Configuration",
-        "Wi-Fi Installation",
-        "Network Security",
-        "Cabling & Infrastructure",
-        "Router & Switch Configuration",
-        "Network Monitoring"
-      ]
-    },
-    {
-      id: 4,
-      title: "CCTV Services",
-      icon: FaVideo,
-      color: "text-red-600",
-      bgColor: "bg-red-50",
-      borderColor: "border-red-100",
-      description: "Professional CCTV installation and security camera systems for complete peace of mind.",
-      features: [
-        "CCTV Installation",
-        "Security Camera Setup",
-        "Remote Monitoring",
-        "24/7 Recording",
-        "Motion Detection",
-        "Mobile Access"
-      ]
-    },
-    {
-      id: 5,
-      title: "Software Services",
-      icon: FaCode,
-      color: "text-indigo-600",
-      bgColor: "bg-indigo-50",
-      borderColor: "border-indigo-100",
-      description: "Custom software development and IT solutions tailored to your business needs.",
-      features: [
-        "Custom Software Development",
-        "Web Applications",
-        "Mobile Apps",
-        "Database Management",
-        "Cloud Integration",
-        "Software Consulting"
-      ]
-    },
-    {
-      id: 6,
-      title: "Pottery Technology",
-      icon: FaPaintBrush,
-      color: "text-amber-600",
-      bgColor: "bg-amber-50",
-      borderColor: "border-amber-100",
-      description: "Innovative technology solutions for modern pottery crafting and ceramic production.",
-      features: [
-        "Smart Kiln Installation",
-        "3D Pottery Design Software",
-        "Digital Art Tools",
-        "Production Management",
-        "Quality Control Systems",
-        "Artisan Training Programs"
-      ]
-    }
-  ];
+  {
+    id: 1,
+    title: "Digital Skills & Training",
+    icon: FaDesktop,
+    color: "text-blue-600",
+    bgColor: "bg-blue-50",
+    borderColor: "border-blue-100",
+    description:
+      "We train artisans and young creators in digital tools, helping them grow income through technology.",
+    features: [
+      "Computer & Digital Literacy",
+      "Business Digital Skills",
+      "Creative Tools Training",
+      "Online Market Readiness",
+      "Technology Mentorship",
+      "Productivity Tools"
+    ]
+  },
+  {
+    id: 2,
+    title: "Digital Business Support",
+    icon: FaCode,
+    color: "text-indigo-600",
+    bgColor: "bg-indigo-50",
+    borderColor: "border-indigo-100",
+    description:
+      "We help small businesses and artisans build digital presence and reach global markets.",
+    features: [
+      "Website Development",
+      "Online Store Setup",
+      "Brand Identity Design",
+      "E-commerce Integration",
+      "Business Automation",
+      "Digital Strategy"
+    ]
+  },
+  {
+    id: 3,
+    title: "Community Connectivity",
+    icon: FaNetworkWired,
+    color: "text-purple-600",
+    bgColor: "bg-purple-50",
+    borderColor: "border-purple-100",
+    description:
+      "We provide digital connectivity solutions to support learning, collaboration, and growth.",
+    features: [
+      "Internet Setup for Communities",
+      "Local Network Infrastructure",
+      "Wi-Fi Access Points",
+      "Digital Centers Setup",
+      "Secure Connectivity",
+      "Remote Collaboration Tools"
+    ]
+  },
+  {
+    id: 4,
+    title: "Creative & Craft Technology",
+    icon: FaPaintBrush,
+    color: "text-amber-600",
+    bgColor: "bg-amber-50",
+    borderColor: "border-amber-100",
+    description:
+      "We merge traditional pottery and craft with modern digital design tools and innovation.",
+    features: [
+      "Digital Art & Design Tools",
+      "3D Craft Visualization",
+      "Modern Pottery Techniques",
+      "Creative Innovation Labs",
+      "Artisan Skill Enhancement",
+      "Design Thinking Workshops"
+    ]
+  },
+  {
+    id: 5,
+    title: "Digital Security & Protection",
+    icon: FaServer,
+    color: "text-green-600",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-100",
+    description:
+      "We ensure safe and secure digital environments for small businesses and community systems.",
+    features: [
+      "Cybersecurity Awareness",
+      "Data Protection",
+      "System Security Setup",
+      "Safe Online Practices",
+      "Backup Solutions",
+      "Secure Cloud Storage"
+    ]
+  },
+  {
+    id: 6,
+    title: "Innovation & AI Support",
+    icon: FaCloud,
+    color: "text-gray-600",
+    bgColor: "bg-gray-50",
+    borderColor: "border-gray-100",
+    description:
+      "We introduce AI and modern technologies to help communities work smarter and grow faster.",
+    features: [
+      "AI Tools for Business",
+      "Automation Solutions",
+      "Smart Analytics",
+      "Digital Assistance Systems",
+      "Innovation Workshops",
+      "Future Tech Training"
+    ]
+  }
+];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -280,6 +286,23 @@ export default function Service() {
       </section>
 
       <Footer />
+        <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
     </div>
   );
 }

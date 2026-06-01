@@ -7,20 +7,28 @@ import Values from "./values";
 import Tech from "./tech";
 import Footer from "./footer";
 import SEO from "../seo/seo";
-export default function Home(){
-    return(
-        <div>
-            <SEO 
+
+// 👇 import chatbot
+import AIChatWidget from "../AI/chatbot";
+
+export default function Home() {
+  return (
+    <div>
+      <SEO 
         title="Home"
         description="Welcome to OPTERWA - Bridging traditional craftsmanship with modern technology solutions for potters and artisans worldwide."
         url="https://opterwa.com/"
       />
-            <Navbar />
-            <Hero />
-            <Mission />
-            <Values />
-            <Stats />
-            <Footer />
-        </div>
-    )
+
+      <Navbar />
+      <Hero />
+      <Mission />
+      <Values />
+      <Stats />
+      <Footer />
+
+      {/* 👇 Floating chatbot (important: keep it last) */}
+      <AIChatWidget />
+    </div>
+  );
 }
