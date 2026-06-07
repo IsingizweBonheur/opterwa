@@ -2,122 +2,144 @@ import React from "react";
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
 import SEO from "../seo/seo";
-import Vision from  "./vision";
+import Vision from "./vision";
 import Leader from "./leader";
-import { FaUsers, FaRocket, FaGlobe, FaTrophy, FaChartLine, FaHeart } from "react-icons/fa";
+import Trust from "../testimonial/trust";
+import StructuredData from "../seo/structure";
+import Partner from "../testimonial/partener";
+import {
+  FaHandsHelping,
+  FaGlobe,
+  FaLightbulb,
+  FaCalendarAlt,
+  FaRocket
+} from "react-icons/fa";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <SEO 
-        title="About Us"
-        description="Learn about OPTERWA's mission to bridge technology and pottery craft, empowering artisans and businesses through innovative solutions."
-        url="https://opterwa.com/about"
-      /> 
-      
+    <div className="min-h-screen bg-white">
+
+      <SEO
+  title="About OPTERWA | Technology NGO in Rwanda"
+  description="Learn about OPTERWA, a Rwanda-based NGO empowering communities through technology training, digital innovation, and artisan support programs."
+  url="https://opterwa.com/about"
+  keywords="
+    about OPTERWA,
+    NGO Rwanda technology,
+    tech NGO Kigali,
+    digital skills Rwanda,
+    OPTERWA mission,
+    artisan technology Rwanda
+  "
+/>
+
+      <StructuredData />
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-indigo-500 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            About OPTERWA
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Bridging traditional craftsmanship with modern technology solutions
-          </p>
-        </div>
+
+      {/* HERO */}
+      <section className="bg-slate-900 text-white pt-32 pb-20 text-center">
+        <h1 className="text-5xl font-bold mb-4">About OPTERWA</h1>
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          Empowering artisans and communities through technology and innovation.
+        </p>
       </section>
 
-      {/* Our Story Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
-              <div className="w-20 h-1 bg-indigo-600 mb-6 rounded-full"></div>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                OPTERWA began its journey as <span className="font-semibold text-indigo-600">APFERWA</span> in <span className="font-semibold">March 2024</span>, 
-                founded with a vision to transform practical skills development through technology. 
-                After months of dedicated service and growth, we evolved and rebranded to <span className="font-semibold text-indigo-600">OPTERWA</span> 
-                in <span className="font-semibold">July 2025</span>, marking a new chapter in our mission to empower individuals through technology-driven practices.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                As a <span className="font-semibold text-indigo-600">non-governmental organization (NGO)</span>, OPTERWA is dedicated to helping individuals and students 
-                enhance their practical skills through innovative technology-driven practices. We focus on providing 
-                hands-on learning experiences, utilizing the latest technological advancements to ensure our participants 
-                gain valuable, real-world skills that prepare them for success in today's tech-driven world.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Whether you're a student looking to supplement your education or an individual seeking to upskill, 
-                our programs are designed to empower you with the knowledge and tools you need to thrive. 
-                From bridging traditional craftsmanship with modern technology to offering cutting-edge IT training, 
-                OPTERWA is committed to creating opportunities and transforming lives through education and innovation.
-              </p>
+      {/* WHY WE EXIST */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto text-center px-6">
+
+          <h2 className="text-4xl font-bold mb-6">Why We Exist</h2>
+
+          <p className="text-gray-600 mb-12">
+            We bridge the gap between traditional craftsmanship and modern technology
+            by giving artisans access to skills, tools, and global markets.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <FaHandsHelping className="text-indigo-600 text-3xl mx-auto mb-3" />
+              <h3 className="font-semibold">Community First</h3>
+              <p className="text-gray-500 text-sm">People before technology.</p>
             </div>
-            
-            {/* Image Section */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur-2xl opacity-20"></div>
-              <div className="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src="/assets/our-story-image.jpg" 
-                  alt="OPTERWA team working on technology solutions" 
-                  className="w-full h-auto object-cover"
-                  onError={(e) => {
-                  }}
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                  <p className="text-white text-sm font-medium">From APFERWA (March 2024) to OPTERWA (July 2025) — Empowering skills through technology</p>
-                </div>
-              </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <FaGlobe className="text-indigo-600 text-3xl mx-auto mb-3" />
+              <h3 className="font-semibold">Global Access</h3>
+              <p className="text-gray-500 text-sm">Connecting local to global markets.</p>
             </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <FaLightbulb className="text-indigo-600 text-3xl mx-auto mb-3" />
+              <h3 className="font-semibold">Innovation</h3>
+              <p className="text-gray-500 text-sm">Technology solving real problems.</p>
+            </div>
+
           </div>
         </div>
       </section>
-       <Vision />
-       <Leader />
-      {/* CTA Section */}
-      <section className="bg-blue-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Join Our Journey</h2>
-          <p className="text-lg text-indigo-100 mb-8 max-w-2xl mx-auto">
-            Be part of our mission to bridge technology and craftsmanship
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-indigo-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-          >
-            Get in Touch
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+
+      {/* OUR STORY */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+          {/* TEXT */}
+          <div>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Our Story
+            </h2>
+
+            <div className="space-y-5 text-gray-600 leading-relaxed">
+
+              <p>
+                OPTERWA began its journey as <span className="font-semibold text-indigo-600">APFERWA</span> in March 2024,
+                founded with a vision to transform practical skills development through technology.
+                After months of dedicated service and growth, we evolved and rebranded to
+                <span className="font-semibold text-indigo-600"> OPTERWA</span> in July 2025,
+                marking a new chapter in our mission to empower individuals through technology-driven practices.
+              </p>
+
+              <p>
+                As a non-governmental organization (NGO), OPTERWA is dedicated to helping individuals and students
+                enhance their practical skills through innovative, technology-driven learning experiences.
+                We focus on hands-on training that combines modern tools with real-world applications.
+              </p>
+
+              <p>
+                Whether you're a student or a professional seeking to upskill, our programs are designed
+                to empower you with the knowledge and tools needed to thrive in today's digital world.
+              </p>
+
+              <p>
+                From bridging traditional craftsmanship with modern technology to offering cutting-edge IT training,
+                OPTERWA is committed to creating opportunities and transforming lives through education and innovation.
+              </p>
+
+            </div>
+          </div>
+
+          {/* IMAGE PLACEHOLDER */}
+          <div className="bg-gray-100 rounded-2xl h-96 flex items-center justify-center text-gray-400">
+            Image / Team / Training Photo
+          </div>
+
         </div>
       </section>
 
-      <Footer />
-        <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+      {/* IMPACT */}
+      <Trust />
 
-        .animate-fade-in {
-          animation: fadeIn 0.6s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
+
+      {/* VISION */}
+      <Vision />
+      {/* Add Parteners like TVET,RDB,RGB */}
+      
+      {/* LEADERSHIP */}
+      <Leader />
+      {/* PARTNERS */}
+      <Partner />
+  
+      <Footer />
     </div>
   );
 }

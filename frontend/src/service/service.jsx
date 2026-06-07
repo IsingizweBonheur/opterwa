@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
+import StructuredData from "../seo/structure";
 import { 
   FaDesktop, 
   FaPrint, 
@@ -132,11 +133,21 @@ export default function Service() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <SEO 
-        title="Our Services"
-        description="Explore OPTERWA's comprehensive services including Infrastructure, Security, IT Solutions, and Pottery Craft Technology."
-        url="https://opterwa.com/services"
-      />
+     <SEO
+  title="Our Services | IT & Technology Solutions in Rwanda"
+  description="Explore OPTERWA services including computer repair, networking, CCTV installation, software development, and IT support across Rwanda."
+  url="https://opterwa.com/services"
+  keywords="
+    IT services Rwanda,
+    computer repair Kigali,
+    networking services Rwanda,
+    CCTV installation Rwanda,
+    software development Rwanda,
+    tech support Kigali,
+    OPTERWA services
+  "
+/>
+      <StructuredData />
       <Navbar />
       
       {/* Hero Section */}

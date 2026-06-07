@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../component/navbar';
 import Footer from '../component/footer';
 import SEO from "../seo/seo";
+import StructuredData from '../seo/structure';
 import { 
   FaEnvelope, 
   FaPhoneAlt, 
@@ -91,7 +92,7 @@ export default function Contact() {
         description="Contact OPTERWA for customer support."
         url="https://opterwa.com/contact"
       />
-      <Navbar />
+      <StructuredData />
       <Navbar />
       
       {/* Hero Section */}

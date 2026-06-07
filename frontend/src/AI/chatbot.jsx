@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, X, Send, Loader2, Sparkles, HelpCircle, 
   Phone, Mail, Globe, Info, Zap, Heart, Handshake, 
-  FolderKanban, MessageSquare, Info as InfoIcon 
+  FolderKanban, MessageSquare, Info as InfoIcon,
+  ChevronDown
 } from "lucide-react";
 
 const NGO_KNOWLEDGE = {
@@ -51,7 +52,18 @@ export default function AIChatWidget() {
   ]);
   const [input, setInput] = useState("");
   const [isThinking, setIsThinking] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const messagesEndRef = useRef(null);
+
+  // Check screen size for responsive behavior
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -100,57 +112,65 @@ export default function AIChatWidget() {
   ];
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 font-sans">
+    <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50 font-sans">
       {/* Floating Button */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-2xl relative"
+          className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white p-3 sm:p-4 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-2xl relative"
         >
-          <MessageCircle size={22} />
-          <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+          <MessageCircle size={isMobile ? 20 : 22} />
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-500 rounded-full animate-pulse"></span>
         </button>
       )}
 
       {/* Chat Box */}
       {open && (
-        <div className="w-96 h-[600px] bg-white shadow-2xl rounded-2xl flex flex-col overflow-hidden border border-gray-200">
+        <div className={`
+          fixed sm:absolute
+          ${isMobile 
+            ? 'inset-0 bottom-0 rounded-none' 
+            : 'bottom-0 right-0 w-96 h-[600px] rounded-2xl'
+          }
+          bg-white shadow-2xl flex flex-col overflow-hidden border border-gray-200
+        `}>
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <Sparkles size={20} />
+              <Sparkles size={isMobile ? 18 : 20} />
               <div>
-                <span className="font-semibold">OPTERWA Assistant</span>
-                <p className="text-xs text-blue-100">AI-Powered Support</p>
+                <span className="font-semibold text-sm sm:text-base">OPTERWA Assistant</span>
+                <p className="text-xs text-blue-100 hidden sm:block">AI-Powered Support</p>
               </div>
             </div>
             <div className="flex gap-1">
               <button
                 onClick={() => setShowHelp(!showHelp)}
-                className="hover:bg-white/20 rounded-lg p-1 transition-colors"
+                className="hover:bg-white/20 rounded-lg p-1.5 sm:p-1 transition-colors"
                 title="Help & Info"
               >
-                <HelpCircle size={18} />
+                <HelpCircle size={isMobile ? 16 : 18} />
               </button>
               <button
                 onClick={() => {
                   setOpen(false);
                   setShowQuickQuestions(false);
+                  setShowHelp(false);
                 }}
-                className="hover:bg-white/20 rounded-lg p-1 transition-colors"
+                className="hover:bg-white/20 rounded-lg p-1.5 sm:p-1 transition-colors"
               >
-                <X size={18} />
+                <X size={isMobile ? 16 : 18} />
               </button>
             </div>
           </div>
 
           {/* Help Card (collapsible) */}
           {showHelp && (
-            <div className="mx-3 mt-3 p-3 bg-blue-50 border border-blue-200 rounded-xl">
+            <div className="mx-2 sm:mx-3 mt-2 sm:mt-3 p-3 bg-blue-50 border border-blue-200 rounded-xl">
               <div className="flex items-start gap-2">
-                <Info size={16} className="text-blue-600 mt-0.5 flex-shrink-0" />
+                <Info size={isMobile ? 14 : 16} className="text-blue-600 mt-0.5 flex-shrink-0" />
                 <div className="flex-1">
-                  <h4 className="text-sm font-semibold text-blue-900 mb-2">ℹ️ How OPTERWA AI Works</h4>
+                  <h4 className="text-xs sm:text-sm font-semibold text-blue-900 mb-2">ℹ️ How OPTERWA AI Works</h4>
                   <p className="text-xs text-blue-800 mb-3">
                     I'm trained on OPTERWA's mission, projects, donation process, and volunteer programs.
                     Ask me anything about our work with artisans!
@@ -160,15 +180,15 @@ export default function AIChatWidget() {
                     <div className="space-y-1 text-xs text-blue-800">
                       <div className="flex items-center gap-2">
                         <Phone size={12} />
-                        <span>+250 788 231 302</span>
+                        <span className="text-xs">+250 788 231 302</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Mail size={12} />
-                        <span>info@opterwa.com</span>
+                        <span className="text-xs">info@opterwa.com</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Globe size={12} />
-                        <span>www.opterwa.org</span>
+                        <span className="text-xs">www.opterwa.org</span>
                       </div>
                     </div>
                   </div>
@@ -184,13 +204,13 @@ export default function AIChatWidget() {
           )}
 
           {/* Messages */}
-          <div className="flex-1 p-4 space-y-3 overflow-y-auto bg-gradient-to-b from-gray-50 to-white">
+          <div className="flex-1 p-3 sm:p-4 space-y-3 overflow-y-auto bg-gradient-to-b from-gray-50 to-white">
             {messages.map((msg, i) => (
               <div key={i}>
                 <div className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-                  <div className={`max-w-[80%] ${msg.role === "user" ? "order-1" : "order-2"}`}>
+                  <div className={`max-w-[85%] sm:max-w-[80%] ${msg.role === "user" ? "order-1" : "order-2"}`}>
                     <div
-                      className={`px-4 py-2 rounded-2xl shadow-sm text-sm
+                      className={`px-3 sm:px-4 py-2 rounded-2xl shadow-sm text-xs sm:text-sm
                         ${
                           msg.role === "user"
                             ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-br-none"
@@ -199,7 +219,7 @@ export default function AIChatWidget() {
                     >
                       {msg.text}
                     </div>
-                    <p className={`text-xs text-gray-400 mt-1 ${msg.role === "user" ? "text-right" : "text-left"}`}>
+                    <p className={`text-[10px] sm:text-xs text-gray-400 mt-1 ${msg.role === "user" ? "text-right" : "text-left"}`}>
                       {formatTime(msg.timestamp)}
                     </p>
                   </div>
@@ -210,11 +230,11 @@ export default function AIChatWidget() {
                   <div className="mt-4">
                     <div className="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-2xl p-3 shadow-sm">
                       <div className="flex items-center gap-2 mb-2">
-                        <Zap size={14} className="text-purple-600" />
-                        <span className="text-xs font-semibold text-purple-700">Quick questions:</span>
-                        <span className="text-xs text-gray-400">{formatTime(new Date())}</span>
+                        <Zap size={isMobile ? 12 : 14} className="text-purple-600" />
+                        <span className="text-[10px] sm:text-xs font-semibold text-purple-700">Quick questions:</span>
+                        <span className="text-[10px] sm:text-xs text-gray-400">{formatTime(new Date())}</span>
                       </div>
-                      <div className="space-y-2">
+                      <div className="space-y-1.5 sm:space-y-2">
                         {quickQuestions.map((q, idx) => (
                           <button
                             key={idx}
@@ -222,11 +242,11 @@ export default function AIChatWidget() {
                               sendMessage(q.text);
                               setShowQuickQuestions(true);
                             }}
-                            className="w-full text-left text-sm text-gray-700 hover:text-blue-600 hover:bg-white/60 px-3 py-2 rounded-xl transition-all flex items-center gap-3 group"
+                            className="w-full text-left text-xs sm:text-sm text-gray-700 hover:text-blue-600 hover:bg-white/60 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl transition-all flex items-center gap-2 sm:gap-3 group"
                           >
-                            <q.icon size={18} className={q.color} />
+                            <q.icon size={isMobile ? 14 : 18} className={q.color} />
                             <span className="flex-1">{q.text}</span>
-                            <span className="opacity-0 group-hover:opacity-100 transition-opacity text-blue-500">→</span>
+                            <span className="opacity-0 group-hover:opacity-100 transition-opacity text-blue-500 text-xs sm:text-sm">→</span>
                           </button>
                         ))}
                       </div>
@@ -239,10 +259,10 @@ export default function AIChatWidget() {
             {/* Thinking Indicator */}
             {isThinking && (
               <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-none px-4 py-2 shadow-sm">
+                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-none px-3 sm:px-4 py-2 shadow-sm">
                   <div className="flex items-center gap-2">
-                    <Loader2 size={14} className="animate-spin text-blue-600" />
-                    <span className="text-sm text-gray-500">Thinking</span>
+                    <Loader2 size={isMobile ? 12 : 14} className="animate-spin text-blue-600" />
+                    <span className="text-xs sm:text-sm text-gray-500">Thinking</span>
                     <span className="flex gap-1">
                       <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0s" }}></span>
                       <span className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></span>
@@ -263,7 +283,7 @@ export default function AIChatWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about OPTERWA..."
-                  className="w-full px-4 py-2.5 text-sm border border-gray-200 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm border border-gray-200 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
                   onKeyDown={(e) => e.key === "Enter" && sendMessage()}
                   disabled={isThinking}
                 />
@@ -271,20 +291,28 @@ export default function AIChatWidget() {
               <button
                 onClick={() => sendMessage()}
                 disabled={!input.trim() || isThinking}
-                className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2.5 rounded-xl transition-all duration-200 flex items-center gap-2
+                className={`bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl transition-all duration-200 flex items-center gap-1 sm:gap-2
                   ${
                     !input.trim() || isThinking
                       ? "opacity-50 cursor-not-allowed"
-                      : "hover:from-blue-700 hover:to-blue-800 hover:scale-105 active:scale-95"
+                      : "hover:from-blue-700 hover:to-blue-800 active:scale-95"
                   }`}
               >
-                <Send size={18} />
+                <Send size={isMobile ? 14 : 18} />
+                <span className="hidden sm:inline">Send</span>
               </button>
             </div>
-            <p className="text-xs text-gray-400 mt-2 text-center">
+            <p className="text-[10px] sm:text-xs text-gray-400 mt-2 text-center">
               Powered by OPTERWA AI • Responses may take a moment
             </p>
           </div>
+
+          {/* Mobile swipe indicator */}
+          {isMobile && (
+            <div className="flex justify-center py-1 bg-white border-t border-gray-100">
+              <div className="w-10 h-1 bg-gray-300 rounded-full"></div>
+            </div>
+          )}
         </div>
       )}
     </div>

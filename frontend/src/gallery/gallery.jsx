@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
 import SEO from "../seo/seo";
+import StructuredData from "../seo/structure";
 import { 
   FaRocket, 
   FaHardHat, 
@@ -72,7 +73,7 @@ export default function Gallery() {
         description="Explore OPTERWA's Galley including Infrastructure, Security, IT Solutions, and Pottery Craft Technology."
         url="https://opterwa.com/gallery"
       />
-      <Navbar />
+      <StructuredData />
       <Navbar />
       
       {/* Hero Section - Matching previous component style */}
