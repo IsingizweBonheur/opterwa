@@ -14,17 +14,17 @@ export default function Leader() {
       titleColor: "text-indigo-600",
       hoverColor: "hover:bg-indigo-50"
     },
-    {
-      initials: "IB",
-      name: "DUSHIME ISINGIZWE Bonheur",
-      title: "IT Director",
-      description: "As IT Director, Bonheur oversees the technical infrastructure and digital innovation at OPTERWA. He leads the development of cutting-edge technology solutions that transform traditional industries and create sustainable digital ecosystems for businesses across Rwanda.",
-      gradient: "from-indigo-500 to-indigo-600",
-      initialBg: "from-indigo-100 to-indigo-200",
-      initialColor: "text-indigo-600",
-      titleColor: "text-indigo-600",
-      hoverColor: "hover:bg-indigo-50"
-    }
+    // {
+    //   initials: "IB",
+    //   name: "DUSHIME ISINGIZWE Bonheur",
+    //   title: "IT Director",
+    //   description: "As IT Director, Bonheur oversees the technical infrastructure and digital innovation at OPTERWA. He leads the development of cutting-edge technology solutions that transform traditional industries and create sustainable digital ecosystems for businesses across Rwanda.",
+    //   gradient: "from-indigo-500 to-indigo-600",
+    //   initialBg: "from-indigo-100 to-indigo-200",
+    //   initialColor: "text-indigo-600",
+    //   titleColor: "text-indigo-600",
+    //   hoverColor: "hover:bg-indigo-50"
+    // }
   ];
 
   return (
