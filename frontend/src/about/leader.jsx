@@ -13,7 +13,7 @@ export default function Leader() {
       initialColor: "text-indigo-600",
       titleColor: "text-indigo-600",
       hoverColor: "hover:bg-indigo-50"
-    },
+    }
     // {
     //   initials: "IB",
     //   name: "DUSHIME ISINGIZWE Bonheur",
