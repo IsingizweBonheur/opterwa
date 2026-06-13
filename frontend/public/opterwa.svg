@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <!-- Transparent background -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="24">
+    <!-- Left hexagon outline (dark blue) -->
+    <path d="M120 150 
+             L160 90 
+             L240 90 
+             L280 150 
+             L240 210 
+             L160 210 Z"
+          stroke="#0057B8"/>
+    <!-- Right hexagon outline (light blue) -->
+    <path d="M480 150 
+             L440 90 
+             L360 90 
+             L320 150 
+             L360 210 
+             L440 210 Z"
+          stroke="#6AA6FF"/>
+    <!-- Connecting diagonal bar -->
+    <path d="M200 110 L380 190"
+          stroke="#2D6CFF" stroke-linecap="round" stroke-width="36"/>
+  </g>
+</svg>
