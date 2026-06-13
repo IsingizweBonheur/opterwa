@@ -22,16 +22,6 @@ export default function Leader() {
       initialColor: "text-indigo-600",
       titleColor: "text-indigo-600",
     },
-    {
-      initials: "HB",
-      name: "HABWISHIMWE Bonance",
-      title: "Project Manager",
-      description:
-        "As Project Manager, Bonance coordinates OPTERWA projects from planning to execution. He ensures smooth delivery of community programs, training initiatives, and technology deployments while maintaining strong communication between teams and stakeholders.",
-      initialBg: "from-indigo-100 to-indigo-200",
-      initialColor: "text-indigo-600",
-      titleColor: "text-indigo-600",
-    },
   ];
 
   return (
