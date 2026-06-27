@@ -45,7 +45,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Logo"
-              className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-bold tracking-wide text-indigo-600 uppercase">

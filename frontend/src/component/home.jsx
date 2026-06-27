@@ -40,6 +40,7 @@ export default function Home() {
       <Values />
       <Stats />
       <Partner />
+
       <Footer />
 
       {/* 👇 Floating chatbot (important: keep it last) */}
