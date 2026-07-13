@@ -13,7 +13,7 @@ export default function SEO({
   // Default values (fallback for all pages)
   const siteTitle = "OPTERWA - Computing Future";
   const siteDescription = "Bridging traditional craftsmanship with modern technology solutions for potters and artisans worldwide.";
-  const siteUrl = "https://opterwa.com";
+  const siteUrl = "https://opterwa.org";
   const siteImage = "https://opterwa.com/og-image.jpg";
   const twitterHandle = "@opterwa";
   

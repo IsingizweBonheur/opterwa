@@ -136,7 +136,7 @@ export default function Service() {
      <SEO
   title="Our Services | IT & Technology Solutions in Rwanda"
   description="Explore OPTERWA services including computer repair, networking, CCTV installation, software development, and IT support across Rwanda."
-  url="https://opterwa.com/services"
+  url="https://opterwa.org/services"
   keywords="
     IT services Rwanda,
     computer repair Kigali,

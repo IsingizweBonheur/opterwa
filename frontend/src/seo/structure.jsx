@@ -8,9 +8,9 @@ export default function StructuredData() {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "OPTERWA",
-          "url": "https://opterwa.com",
+          "url": "https://opterwa.org",
           
-          "logo": "https://opterwa.com/logo.png",
+          "logo": "https://opterwa.org/logo.png",
 
           "description":
             "OPTERWA is an NGO in Rwanda empowering artisans and communities through technology training, IT services, and digital innovation.",
@@ -48,11 +48,11 @@ export default function StructuredData() {
           "potentialAction": [
             {
               "@type": "DonateAction",
-              "target": "https://opterwa.com/donate"
+              "target": "https://opterwa.org/donate"
             },
             {
               "@type": "ContactAction",
-              "target": "https://opterwa.com/contact"
+              "target": "https://opterwa.org/contact"
             }
           ]
         })}

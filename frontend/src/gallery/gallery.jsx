@@ -71,7 +71,7 @@ export default function Gallery() {
          <SEO 
         title="Gallery"
         description="Explore OPTERWA's Galley including Infrastructure, Security, IT Solutions, and Pottery Craft Technology."
-        url="https://opterwa.com/gallery"
+        url="https://opterwa.org/gallery"
       />
       <StructuredData />
       <Navbar />

@@ -90,7 +90,7 @@ export default function Contact() {
          <SEO 
         title="Contact us"
         description="Contact OPTERWA for customer support."
-        url="https://opterwa.com/contact"
+        url="https://opterwa.org/contact"
       />
       <StructuredData />
       <Navbar />

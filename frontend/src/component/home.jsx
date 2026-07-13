@@ -9,10 +9,10 @@ import Footer from "./footer";
 import SEO from "../seo/seo";
 import StructuredData from "../seo/structure";
 import Trust from "../testimonial/trust";
-
 // 👇 import chatbot
 import AIChatWidget from "../AI/chatbot";
 import Partner from "../testimonial/partener";
+import CoreService from "./coreServise";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
     <SEO
   title="OPTERWA Rwanda | IT Services, Training & Digital Solutions"
   description="OPTERWA is a Rwanda-based NGO providing IT services, computer repair, networking, software development, and digital skills training for artisans and students."
-  url="https://opterwa.com/"
+  url="https://opterwa.org/"
   keywords="
     OPTERWA Rwanda,
     IT services Kigali,
@@ -38,6 +38,7 @@ export default function Home() {
       <Trust />
       <Mission />
       <Values />
+      <CoreService />
       <Stats />
       <Partner />
 

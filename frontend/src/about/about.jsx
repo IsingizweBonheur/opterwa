@@ -22,7 +22,7 @@ export default function About() {
       <SEO
   title="About OPTERWA | Technology NGO in Rwanda"
   description="Learn about OPTERWA, a Rwanda-based NGO empowering communities through technology training, digital innovation, and artisan support programs."
-  url="https://opterwa.com/about"
+  url="https://opterwa.org/about"
   keywords="
     about OPTERWA,
     NGO Rwanda technology,

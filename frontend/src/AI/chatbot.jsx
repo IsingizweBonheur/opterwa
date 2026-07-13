@@ -17,10 +17,10 @@ const NGO_KNOWLEDGE = {
     "We welcome volunteers in tech, design, and community outreach programs. You can help by teaching digital skills, website development, social media management, or assisting in our training workshops.",
   projects:
     "We run training programs, digital transformation initiatives, and artisan marketplace support projects. Current projects include: Digital Literacy for Artisans, E-commerce Setup Program, and Global Market Access Initiative.",
-  services: "OPTERWA offers: 📱 Digital skills training, 🛠️ Artisan marketplace platform, 💻 E-commerce setup, 📊 Business digital transformation, and 🌍 Global market access programs.",
+  services: "OPTERWA offers:  Digital skills training,  Artisan marketplace platform, 💻 E-commerce setup, 📊 Business digital transformation, and 🌍 Global market access programs.",
   cost: "Our programs are mostly free for artisans! For specific training or digital tools, please contact us directly at +250 788 231 302 for a personalized discussion.",
   mobile: "Yes! We have a mobile-friendly artisan platform and are developing a dedicated mobile app for artisans to showcase their products, track sales, and access training content.",
-  contact: "You can reach OPTERWA at 📞 +250 788 231 302 or 📧 info@opterwa.com",
+  contact: "You can reach OPTERWA at  0788231302 or  info@opterwa.org",
 };
 
 function getAIResponse(message) {
