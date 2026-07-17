@@ -106,7 +106,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <FaClock className="text-indigo-400 text-lg flex-shrink-0" />
-                <span className="text-gray-300 text-sm">Mon - Fri: 8:00 AM - 6:00 PM</span>
+                <span className="text-gray-300 text-sm">Mon - Fri: 8:00 AM - 5:00 PM</span>
               </div>
             </div>
           </div>

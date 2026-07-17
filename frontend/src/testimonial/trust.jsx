@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 export default function Trust() {
   const stats = [
     {
-      number: "100+",
+      number: "50+",
       label: "Projects Completed",
     },
     {
-      number: "150+",
+      number: "100+",
       label: "Artisans Trained",
     },
     {
-      number: "10",
+      number: "5",
       label: "Technology Solutions",
     },
     {
-      number: "2 Years",
+      number: "1 Years",
       label: "Years of Innovation",
     },
   ];
