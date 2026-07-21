@@ -230,7 +230,7 @@ export default function Hero() {
 
               >
 
-                ❤️ Donate Now
+                 Donate Now
 
 
               </button>
